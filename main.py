@@ -17,7 +17,8 @@ def main():
         screen.fill("black")
         player.draw(screen)
         pygame.display.flip()
-        
+        player.update(dt)
+
         # limit the framerate to 60 FPS
         dt = clock.tick(60) / 1000
 
