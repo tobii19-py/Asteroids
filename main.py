@@ -38,6 +38,7 @@ def main():
             
         for obj in updatable:
             obj.update(dt)
+    
 
         for obj in asteroids:
             if player.collide(obj):
