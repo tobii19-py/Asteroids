@@ -40,12 +40,17 @@ def main():
             obj.update(dt)
     
 
-        for obj in asteroids:
-            if player.collide(obj):
+        for asteroid in asteroids:
+            if player.collide(asteroid):
                 screen.blit(text_surface, (640, 360))
                 pygame.display.flip()
                 time.sleep(2)
                 sys.exit()
+
+            for shot in shots:
+                if asteroid.collide(shot):
+                    shot.kill()
+                    asteroid.kill()
 
         screen.fill("black")
         
